@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header } from "../components/header";
+import { Header } from "../../components/header";
 
-const Home: NextPage = () => {
+const Escalacoes: NextPage = () => {
   return (
     <>
       <Head>
@@ -15,8 +15,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+      <div>escalações</div>
     </>
   );
 };
 
-export default Home;
+export default Escalacoes;
