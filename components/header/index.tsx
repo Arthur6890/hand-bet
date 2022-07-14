@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { Button, Offcanvas } from "react-bootstrap";
+import { Offcanvas } from "react-bootstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Logo from "../../public/images/handbalaLogo.png";
 import ButtonComponent from "../button";
@@ -16,16 +16,20 @@ export function Header() {
   return (
     <div className={styles.main}>
       <div className={styles.logo}>
-        <Link href={"/"}>
+        <Link href={"/"} passHref>
           <Image src={Logo} />
         </Link>
       </div>
       <div className={styles.content}>
-        <Link href={"/escalacoes"}>
-          <ButtonComponent text="Escalações" />
+        <Link href={"/escalacoes"} passHref>
+          <a>
+            <ButtonComponent text="Escalações" />
+          </a>
         </Link>
-        <Link href={"https://www.instagram.com/handbala_atena/"}>
-          <ButtonComponent text="faça sua aposta" />
+        <Link href={"https://www.instagram.com/handbala_atena/"} passHref>
+          <a>
+            <ButtonComponent text="faça sua aposta" />
+          </a>
         </Link>
       </div>
 
@@ -42,17 +46,17 @@ export function Header() {
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>
               <div className={styles.logo}>
-                <Link href={"/"}>
+                <Link href={"/"} passHref>
                   <Image src={Logo} />
                 </Link>
               </div>
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body className={styles.offcanvasContent}>
-            <Link href={"/escalacoes"}>
+            <Link href={"/escalacoes"} passHref>
               <ButtonComponent text="Escalações" />
             </Link>
-            <Link href={"https://www.instagram.com/handbala_atena/"}>
+            <Link href={"https://www.instagram.com/handbala_atena/"} passHref>
               <ButtonComponent text="faça sua aposta" />
             </Link>
           </Offcanvas.Body>

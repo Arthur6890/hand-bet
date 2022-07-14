@@ -4,6 +4,7 @@ import { Header } from "../components/header";
 import { GritoCard } from "../components/gritoDeGuerraCard";
 import { HandBalaBanner } from "../components/handBalaBanner";
 import Script from "next/script";
+import { Footer } from "../components/footer";
 
 const Home: NextPage = () => {
   return (
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
       <Header />
       <HandBalaBanner />
       <GritoCard />
+      <Footer />
     </>
   );
 };

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Footer } from "../../components/footer";
 import { Header } from "../../components/header";
 
 const Escalacoes: NextPage = () => {
@@ -13,9 +14,9 @@ const Escalacoes: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
-      <div>escalações</div>
+      <Escalacoes />
+      <Footer />
     </>
   );
 };
