@@ -17,7 +17,7 @@ export function HandBalaBanner() {
           </h3>
           <h4>E você pode fazer dinheiro com isso!</h4>
         </div>
-        <Button text="Faça sua aposta" />
+        <Button text="Faça sua aposta" href="/escalacoes" />
       </div>
     </div>
   );

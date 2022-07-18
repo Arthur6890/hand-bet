@@ -4,33 +4,29 @@ import React, { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Logo from "../../public/images/handbalaLogo.png";
-import ButtonComponent from "../button";
+import ButtonComponent from "../button/index";
 import styles from "./styles.module.scss";
 
-export function Header() {
+export function HeaderHand() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
-    <div className={styles.main}>
+    <header className={styles.main}>
       <div className={styles.logo}>
         <Link href={"/"} passHref>
           <Image src={Logo} />
         </Link>
       </div>
       <div className={styles.content}>
-        <Link href={"/escalacoes"} passHref>
-          <a>
-            <ButtonComponent text="Escalações" />
-          </a>
-        </Link>
-        <Link href={"https://www.instagram.com/handbala_atena/"} passHref>
-          <a>
-            <ButtonComponent text="faça sua aposta" />
-          </a>
-        </Link>
+        <ButtonComponent text="Escalações" href={"/"} />
+
+        <ButtonComponent
+          text="faça sua aposta"
+          href={"https://www.instagram.com/handbala_atena/"}
+        />
       </div>
 
       <div className={`${styles.content} ${styles.responsive}`}>
@@ -53,15 +49,15 @@ export function Header() {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body className={styles.offcanvasContent}>
-            <Link href={"/escalacoes"} passHref>
-              <ButtonComponent text="Escalações" />
-            </Link>
-            <Link href={"https://www.instagram.com/handbala_atena/"} passHref>
-              <ButtonComponent text="faça sua aposta" />
-            </Link>
+            <ButtonComponent text="Escalações" href={"/"} />
+
+            <ButtonComponent
+              text="faça sua aposta"
+              href={"https://www.instagram.com/handbala_atena/"}
+            />
           </Offcanvas.Body>
         </Offcanvas>
       </div>
-    </div>
+    </header>
   );
 }

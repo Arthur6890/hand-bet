@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header } from "../components/header";
 import { GritoCard } from "../components/gritoDeGuerraCard";
 import { HandBalaBanner } from "../components/handBalaBanner";
-import Script from "next/script";
-import { Footer } from "../components/footer";
+import { HeaderHand } from "../components/headerHand";
+import { FooterHand } from "../components/footerHand";
 
 const Home: NextPage = () => {
   return (
@@ -16,17 +15,12 @@ const Home: NextPage = () => {
           content="Site de apostas criada para o jogo do HandBala DCC VS Estatística"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-          rel="stylesheet"
-        />
       </Head>
-      <Script src="https://unpkg.com/aos@2.3.1/dist/aos.js" />
 
-      <Header />
+      <HeaderHand />
       <HandBalaBanner />
       <GritoCard />
-      <Footer />
+      <FooterHand />
     </>
   );
 };

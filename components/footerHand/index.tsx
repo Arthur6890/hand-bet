@@ -5,9 +5,9 @@ import Logo from "../../public/images/handbalaLogo.png";
 import styles from "./styles.module.scss";
 import { BsInstagram, BsWhatsapp } from "../../node_modules/react-icons/bs";
 
-export function Footer() {
+export function FooterHand() {
   return (
-    <div className={styles.main}>
+    <footer className={styles.main}>
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link href={"/"} passHref>
@@ -33,6 +33,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
