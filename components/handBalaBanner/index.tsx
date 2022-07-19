@@ -7,7 +7,7 @@ export function HandBalaBanner() {
     <div className={styles.main}>
       <div className={styles.titles}>
         <h2>Amistoso interno Handbala</h2>
-        <h3>DCC vs Estatismástica</h3>
+        <h3>DCC vs Estatismática</h3>
       </div>
       <div className={styles.announcement}>
         <div className={styles.announcementTexts}>
@@ -17,7 +17,7 @@ export function HandBalaBanner() {
           </h3>
           <h4>E você pode fazer dinheiro com isso!</h4>
         </div>
-        <Button text="Faça sua aposta" href="/escalacoes" />
+        <Button text="Faça sua aposta" href="/aposta" />
       </div>
     </div>
   );

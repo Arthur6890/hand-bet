@@ -11,7 +11,7 @@ export function FooterHand() {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link href={"/"} passHref>
-            <Image src={Logo} />
+            <Image src={Logo} alt="HandBala Logo" />
           </Link>
         </div>
         <div className={styles.contact}>
@@ -22,12 +22,20 @@ export function FooterHand() {
         </div>
         <div className={styles.socialMedia}>
           <div className={styles.socialMediaIcon}>
-            <a href="https://www.instagram.com/handbala_atena/" target="_blank">
+            <a
+              href="https://www.instagram.com/handbala_atena/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BsInstagram />
             </a>
           </div>
           <div className={styles.socialMediaIcon}>
-            <a href="http://wa.me/5531996103374" target="_blank">
+            <a
+              href="http://wa.me/5531996103374"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BsWhatsapp />
             </a>
           </div>

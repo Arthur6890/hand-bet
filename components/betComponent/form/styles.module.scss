@@ -1,0 +1,95 @@
+.main {
+  background: #161616;
+
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    padding: 75px 0;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1246px;
+  margin: 0 auto;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 1023px) and (max-width: 1439px) {
+    padding: 0 60px;
+  }
+}
+
+.title {
+  text-align: left;
+  width: 50%;
+  margin-bottom: 32px;
+  font-size: 50px;
+  color: #ffffff;
+
+  @media screen and (max-width: 1023px) {
+    width: 90%;
+    font-size: 35px;
+    text-align: center;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 40px;
+  width: 50%;
+  border-radius: 16px;
+  background: #292929;
+
+  @media screen and (max-width: 1023px) {
+    width: 90%;
+    padding: 20px;
+  }
+
+  label {
+    margin-bottom: 10px;
+
+    &.simpleLabel {
+      color: #ffffff;
+    }
+
+    &.labelError {
+      color: #a10000;
+    }
+  }
+
+  p {
+    color: #a10000;
+  }
+
+  input,
+  select {
+    border: none;
+    height: 56px;
+    padding: 0 15px;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    color: #a8a8a8;
+    background: #3d3d3d;
+
+    &.labelError {
+      border: 1px solid #ff0000;
+      background: #ff000018;
+    }
+  }
+
+  input[type="submit"] {
+    background: #ff0000;
+    font-family: "Secular One", sans-serif;
+    font-size: 25px;
+    margin-top: 25px;
+    transition: all 0.3s;
+    color: #ffffff;
+
+    &:hover {
+      background: #610000;
+    }
+  }
+}

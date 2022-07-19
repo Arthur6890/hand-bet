@@ -11,17 +11,17 @@ export function GritoCard() {
     <div className={styles.main}>
       <div className={styles.container}>
         <div className={styles.card} data-aos="fade-up">
-          <h3>"HandBala, o que vocês são?"</h3>
+          <h3>{"HandBala, o que vocês são?"}</h3>
           <h2>esquisitos!</h2>
         </div>
         <div className={styles.card} data-aos="fade-up">
           <h2>
             <strong>handebol</strong>!
           </h2>
-          <h3>"O que vocês jogam?"</h3>
+          <h3>{"O que vocês jogam?"}</h3>
         </div>
         <div className={styles.card} data-aos="fade-up">
-          <h3>"Vai subir alguém?"</h3>
+          <h3>{"Vai subir alguém?"}</h3>
           <h2>
             vai subir <strong>ninguém</strong>!
           </h2>

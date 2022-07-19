@@ -17,16 +17,13 @@ export function HeaderHand() {
     <header className={styles.main}>
       <div className={styles.logo}>
         <Link href={"/"} passHref>
-          <Image src={Logo} />
+          <Image src={Logo} alt="HandBala Logo" />
         </Link>
       </div>
       <div className={styles.content}>
-        <ButtonComponent text="Escalações" href={"/"} />
+        <ButtonComponent text="Escalações" href={"/escalacoes"} />
 
-        <ButtonComponent
-          text="faça sua aposta"
-          href={"https://www.instagram.com/handbala_atena/"}
-        />
+        <ButtonComponent text="quero apostar" href={"/aposta"} />
       </div>
 
       <div className={`${styles.content} ${styles.responsive}`}>
@@ -43,18 +40,15 @@ export function HeaderHand() {
             <Offcanvas.Title>
               <div className={styles.logo}>
                 <Link href={"/"} passHref>
-                  <Image src={Logo} />
+                  <Image src={Logo} alt="HandBala Logo" />
                 </Link>
               </div>
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body className={styles.offcanvasContent}>
-            <ButtonComponent text="Escalações" href={"/"} />
+            <ButtonComponent text="Escalações" href={"/escalacoes"} />
 
-            <ButtonComponent
-              text="faça sua aposta"
-              href={"https://www.instagram.com/handbala_atena/"}
-            />
+            <ButtonComponent text="quero apostar" href={"/aposta"} />
           </Offcanvas.Body>
         </Offcanvas>
       </div>

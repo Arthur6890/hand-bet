@@ -21,6 +21,10 @@
   border-bottom: 1px solid #f0f8ff;
   color: #f0f8ff;
 
+  @media screen and (max-width: 1023px) {
+    padding: 0 20px;
+  }
+
   strong {
     color: #7a0000;
   }
@@ -51,6 +55,10 @@
     @media screen and (max-width: 1023px) {
       font-size: 40px;
       width: 75%;
+
+      &:nth-child(2) {
+        text-align: right;
+      }
     }
   }
 }
