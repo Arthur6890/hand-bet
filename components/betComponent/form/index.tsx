@@ -1,8 +1,11 @@
 import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import styles from "./styles.module.scss";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { setCookie } from "nookies";
 
 type Inputs = {
   nome: string;
@@ -10,13 +13,15 @@ type Inputs = {
   timeApostado: string;
   email: string;
   whatsapp: number;
+  valorApostado: number;
+  aceitoTermos: boolean;
 };
 
 const schema = yup
   .object({
     nome: yup.string().required("Este campo é obrigatório"),
     sobrenome: yup.string().required("Este campo é obrigatório"),
-    timeApostado: yup.string().required("Este campo é obrigatório"),
+    timeApostado: yup.string().defined().required("Este campo é obrigatório"),
     email: yup
       .string()
       .email("Favor insira um email válido")
@@ -26,17 +31,42 @@ const schema = yup
       .positive()
       .integer()
       .required("Este campo é obrigatório"),
+    valorApostado: yup.number().positive().required("Este campo é obrigatório"),
+    aceitoTermos: yup.boolean().isTrue("Você deve aceitar os termos de uso"),
   })
   .required();
 
 export function Form() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(schema) });
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    setCookie(null, "comprovanteNome", data.nome, {
+      path: "/comprovante-de-aposta",
+      maxAge: 86400,
+    });
+    setCookie(null, "comprovanteValor", data.valorApostado.toString(), {
+      path: "/comprovante-de-aposta",
+      maxAge: 86400,
+    });
+    setCookie(null, "comprovanteEmail", data.email, {
+      path: "/comprovante-de-aposta",
+      maxAge: 86400,
+    });
+    setCookie(null, "comprovanteTelefone", data.whatsapp.toString(), {
+      path: "/comprovante-de-aposta",
+      maxAge: 86400,
+    });
+    setCookie(null, "comprovanteTime", data.timeApostado, {
+      path: "/comprovante-de-aposta",
+      maxAge: 86400,
+    });
+    router.push("/comprovante-de-aposta");
+  };
   return (
     <div className={styles.main}>
       <div className={styles.container}>
@@ -122,10 +152,60 @@ export function Form() {
                 : styles.simpleLabel
             }`}
           >
+            <option value={undefined}> </option>
             <option value="DCC">DCC</option>
             <option value="ESTATISMATICA">Estatismática</option>
           </select>
           <p>{errors.timeApostado?.message}</p>
+
+          <label
+            className={`${
+              errors.valorApostado?.message
+                ? styles.labelError
+                : styles.simpleLabel
+            }`}
+          >
+            Quanto você deseja apostar?
+          </label>
+          <input
+            type="number"
+            {...register("valorApostado")}
+            className={`${
+              errors.valorApostado?.message
+                ? styles.labelError
+                : styles.simpleLabel
+            }`}
+          />
+          <p>{errors.valorApostado?.message}</p>
+
+          <div>
+            <div className={styles.terms}>
+              <label
+                className={`${
+                  errors.aceitoTermos?.message
+                    ? styles.labelError
+                    : styles.simpleLabel
+                }`}
+              >
+                Declaro que li e aceito os{" "}
+                <Link href={"https://www.instagram.com"}>
+                  <a target="_blank" rel="noopener noreferrer">
+                    Termos de Uso
+                  </a>
+                </Link>
+              </label>
+              <input
+                type="checkbox"
+                {...register("aceitoTermos")}
+                className={`${
+                  errors.aceitoTermos?.message
+                    ? styles.labelError
+                    : styles.simpleLabel
+                }`}
+              />
+            </div>
+            <p className={styles.termsError}>{errors.aceitoTermos?.message}</p>
+          </div>
 
           <input type="submit" />
         </form>

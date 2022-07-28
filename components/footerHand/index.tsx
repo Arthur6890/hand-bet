@@ -15,6 +15,12 @@ export function FooterHand() {
           </Link>
         </div>
         <div className={styles.contact}>
+          <h2>Alguma dúvida?</h2>
+          <p>
+            <Link href={"/faq"}>FAQ - Me ajuda HandBala!</Link>
+          </p>
+        </div>
+        <div className={styles.contact}>
           <h2>Contato</h2>
           <p>Instituto de Ciências Exatas UFMG - sala 1036</p>
           <p>Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte</p>

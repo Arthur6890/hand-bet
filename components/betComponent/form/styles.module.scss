@@ -93,3 +93,24 @@
     }
   }
 }
+
+.terms {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+
+  input {
+    margin: 0 15px 0 0;
+  }
+  label {
+    margin: 0;
+    a {
+      color: #a10000;
+    }
+  }
+}
+
+.termsError {
+  margin: 0;
+}

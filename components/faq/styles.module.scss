@@ -1,0 +1,65 @@
+.main {
+  background: #161616;
+  padding: 128px 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1246px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1023px) {
+    padding: 0 26px;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    padding: 0 40px;
+  }
+}
+
+.title {
+  font-family: "Roboto Condensed", cursive;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 64px;
+  margin-bottom: 53px;
+  color: #ffffff;
+}
+
+.accordion {
+}
+
+.accordionHeader {
+  button {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    background: #0000009d;
+    color: #000000;
+
+    &::after {
+      background-image: url(../../public/images/icons/plus.webp);
+    }
+
+    &[aria-expanded="true"] {
+      background: #000000b2;
+      color: #970000;
+
+      &:after {
+        background-image: url(../../public/images/icons/close.webp);
+      }
+    }
+  }
+}
+
+.accordionBody {
+  font-family: "Share Tech", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.1px;
+  background: #00000069;
+  color: #303030;
+}

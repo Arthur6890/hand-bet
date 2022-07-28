@@ -1,0 +1,128 @@
+.main {
+  background: #161616;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitle {
+  text-align: center;
+  width: 50%;
+  margin: 30px 0 12px;
+  font-size: 50px;
+  color: #ffffff;
+
+  @media screen and (max-width: 1023px) {
+    width: 90%;
+    font-size: 35px;
+    text-align: center;
+  }
+}
+
+.mainSubtitle {
+  text-align: center;
+  width: 50%;
+  margin: 0;
+  font-size: 30px;
+  color: #ffffff;
+
+  @media screen and (max-width: 1023px) {
+    width: 90%;
+    font-size: 35px;
+    text-align: center;
+  }
+}
+
+.comprovanteDiv {
+  background: #feffc5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 40px;
+  margin: 35px 0;
+  width: 40%;
+
+  .image {
+    width: 35%;
+  }
+}
+
+.title {
+  font-family: "Share Tech", monospace;
+  font-size: 40px;
+  max-width: 365px;
+  text-align: center;
+  margin: -20px 0 20px 0;
+  font-weight: 600;
+}
+
+.date {
+  font-family: "Share Tech", monospace;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 15px 0;
+  margin: 5px 0;
+  border-bottom: 1px solid #808080;
+  width: 100%;
+
+  &:last-child {
+    border: none;
+  }
+
+  h2 {
+    margin: 0;
+
+    &:nth-child(1) {
+      font-size: 30px;
+      font-family: "Share Tech", monospace;
+      color: #000000;
+    }
+
+    &:nth-child(2) {
+      font-size: 25px;
+      font-family: "Share Tech Mono", monospace;
+      color: #0000009c;
+    }
+  }
+}
+
+.attention {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  width: 100%;
+  margin: 0;
+  font-size: 30px;
+  color: #ffffff;
+
+  @media screen and (max-width: 1023px) {
+    width: 90%;
+    font-size: 35px;
+    text-align: center;
+  }
+}
+
+.button {
+  margin: 30px 0 50px;
+  border-radius: 30px;
+  padding: 15px;
+  width: 25%;
+  border: none;
+  transition: all 0.3s;
+  font-size: 20px;
+  font-family: "Secular One", cursive;
+  color: #ffffff;
+  background: #ff0000;
+
+  &:hover {
+    background: #570000;
+  }
+}
