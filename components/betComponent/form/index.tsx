@@ -46,23 +46,27 @@ export function Form() {
   } = useForm<Inputs>({ resolver: yupResolver(schema) });
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     setCookie(null, "comprovanteNome", data.nome, {
-      path: "/comprovante-de-aposta",
+      path: "/",
+      maxAge: 86400,
+    });
+    setCookie(null, "comprovanteSobrenome", data.sobrenome, {
+      path: "/",
       maxAge: 86400,
     });
     setCookie(null, "comprovanteValor", data.valorApostado.toString(), {
-      path: "/comprovante-de-aposta",
+      path: "/",
       maxAge: 86400,
     });
     setCookie(null, "comprovanteEmail", data.email, {
-      path: "/comprovante-de-aposta",
+      path: "/",
       maxAge: 86400,
     });
     setCookie(null, "comprovanteTelefone", data.whatsapp.toString(), {
-      path: "/comprovante-de-aposta",
+      path: "/",
       maxAge: 86400,
     });
     setCookie(null, "comprovanteTime", data.timeApostado, {
-      path: "/comprovante-de-aposta",
+      path: "/",
       maxAge: 86400,
     });
     router.push("/comprovante-de-aposta");
