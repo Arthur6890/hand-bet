@@ -92,7 +92,7 @@ export function BetProof() {
         <div className={styles.field}>
           <h2 className={styles.fieldName}>Telefone</h2>
           <h2 className={styles.fieldValue}>{comprovanteTelefone} </h2>
-          {/* <h2 className={styles.fieldValue}>R$ comprovanteValor 00 </h2> */}
+          {/* <h2 className={styles.fieldValue}>R$ comprovanteValor 00 </h2>  */}
         </div>
 
         <div className={styles.field}>
