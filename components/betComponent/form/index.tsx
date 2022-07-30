@@ -6,14 +6,17 @@ import styles from "./styles.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { setCookie } from "nookies";
+import { TextInput } from "../../textInput";
+import { maskBRL, maskPhoneWithDDD } from "../../../utils/masks";
+import { isValidPhoneWithDDD } from "../../../utils/validationFunctions";
 
 type Inputs = {
   nome: string;
   sobrenome: string;
   timeApostado: string;
   email: string;
-  whatsapp: number;
-  valorApostado: number;
+  whatsapp: string;
+  valorApostado: string;
   aceitoTermos: boolean;
 };
 
@@ -27,11 +30,10 @@ const schema = yup
       .email("Favor insira um email válido")
       .required("Este campo é obrigatório"),
     whatsapp: yup
-      .number()
-      .positive()
-      .integer()
+      .string()
+      .min(15, "O campo de whatsapp deve ter pelo 9 números")
       .required("Este campo é obrigatório"),
-    valorApostado: yup.number().positive().required("Este campo é obrigatório"),
+    valorApostado: yup.string().required("Este campo é obrigatório"),
     aceitoTermos: yup.boolean().isTrue("Você deve aceitar os termos de uso"),
   })
   .required();
@@ -41,7 +43,6 @@ export function Form() {
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(schema) });
   const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -83,8 +84,9 @@ export function Form() {
           >
             Nome
           </label>
-          <input
-            {...register("nome")}
+          <TextInput
+            maxLength={15}
+            register={register("nome")}
             className={`${
               errors.nome?.message ? styles.labelError : styles.simpleLabel
             }`}
@@ -98,8 +100,10 @@ export function Form() {
           >
             Sobrenome
           </label>
-          <input
-            {...register("sobrenome")}
+
+          <TextInput
+            maxLength={15}
+            register={register("sobrenome")}
             className={`${
               errors.sobrenome?.message ? styles.labelError : styles.simpleLabel
             }`}
@@ -113,8 +117,10 @@ export function Form() {
           >
             Email
           </label>
-          <input
-            {...register("email")}
+
+          <TextInput
+            
+            register={register("email")}
             className={`${
               errors.email?.message ? styles.labelError : styles.simpleLabel
             }`}
@@ -128,9 +134,17 @@ export function Form() {
           >
             WhatsApp com DDD
           </label>
-          <input
-            type="number"
-            {...register("whatsapp")}
+
+          <TextInput
+            onChange={({ target }) =>
+              (target.value = maskPhoneWithDDD(target.value))
+            }
+            maxLength={15}
+            minLength={11}
+            register={register("whatsapp", {
+              validate: (phone) =>
+                isValidPhoneWithDDD(phone) || "Telefone não é válido",
+            })}
             className={`${
               errors.whatsapp?.message ? styles.labelError : styles.simpleLabel
             }`}
@@ -171,9 +185,11 @@ export function Form() {
           >
             Quanto você deseja apostar?
           </label>
-          <input
-            type="number"
-            {...register("valorApostado")}
+
+          <TextInput
+					type={"number"}
+            onChange={({ target }) => (target.value = maskBRL(target.value))}
+            register={register("valorApostado")}
             className={`${
               errors.valorApostado?.message
                 ? styles.labelError
@@ -192,7 +208,7 @@ export function Form() {
                 }`}
               >
                 Declaro que li e aceito os{" "}
-                <Link href={"https://www.instagram.com"}>
+                <Link href={"/docs/Termos_de_uso.pdf"} >
                   <a target="_blank" rel="noopener noreferrer">
                     Termos de Uso
                   </a>

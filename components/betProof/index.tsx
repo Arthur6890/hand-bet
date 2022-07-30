@@ -9,7 +9,7 @@ const getDate = Date.now();
 const currentDate = new Date(getDate);
 
 const downloadComprovante = () => {
-  console.log("cabeludo");
+  window.alert("função ainda não implementada. Favor tente novamente mais tarde")
 };
 
 const retornaDia = () => {
@@ -36,7 +36,7 @@ const retornaDia = () => {
       day = "Sexta-Feira";
       break;
     case 6:
-      day = "Sábado-Feira";
+      day = "Sábado";
       break;
   }
 

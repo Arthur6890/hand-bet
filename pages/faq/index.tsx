@@ -17,7 +17,7 @@ const FaqPage: NextPage = () => {
       </Head>
 
       <HeaderHand />
-      <Faq title="teste" />
+      <Faq title="Alguma dúvida? Veja aqui tudo o que você precisa saber!" />
       <FooterHand />
     </>
   );

@@ -40,7 +40,7 @@
     color: #000000;
 
     &::after {
-      background-image: url(../../public/images/icons/plus.webp);
+      background-image: url(../../public/images/icons/plus.png);
     }
 
     &[aria-expanded="true"] {
@@ -48,7 +48,7 @@
       color: #970000;
 
       &:after {
-        background-image: url(../../public/images/icons/close.webp);
+        background-image: url(../../public/images/icons/close.png);
       }
     }
   }
