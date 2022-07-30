@@ -9,12 +9,12 @@ export function onlyNumbers(value: string): string {
   return value.replace(/\D/g, "");
 }
 
-export function maskBRL(value: string): string {
-  let valor = value;
-  let valorFormatado = valor.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
+// export function maskBRL(value: string): string {
+//   let valor = value;
+//   let valorFormatado = valor.toLocaleString("pt-BR", {
+//     style: "currency",
+//     currency: "BRL",
+//   });
 
-  return valorFormatado;
-}
+//   return valorFormatado;
+// }

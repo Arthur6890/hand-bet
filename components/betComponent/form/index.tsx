@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { setCookie } from "nookies";
 import { TextInput } from "../../textInput";
-import { maskBRL, maskPhoneWithDDD } from "../../../utils/masks";
+import { maskPhoneWithDDD } from "../../../utils/masks";
 import { isValidPhoneWithDDD } from "../../../utils/validationFunctions";
 
 type Inputs = {
@@ -188,7 +188,7 @@ export function Form() {
 
           <TextInput
 					type={"number"}
-            onChange={({ target }) => (target.value = maskBRL(target.value))}
+            // onChange={({ target }) => (target.value = maskBRL(target.value))}
             register={register("valorApostado")}
             className={`${
               errors.valorApostado?.message
