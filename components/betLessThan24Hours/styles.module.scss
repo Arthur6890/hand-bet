@@ -1,0 +1,82 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 65vh;
+	background: #161616;
+
+	@media screen and (min-width: 1024px) and (max-width: 1439px) {
+		min-height: 70vh;
+	}
+}
+
+.notFound,
+.subTitle {
+	font-family: 'Kanit', sans-serif;
+	font-size: 30px;
+	font-weight: 700;
+	color: #ffffff;
+
+	@media screen and (max-width: 1023px) {
+		font-size: 20px;
+	}
+}
+
+.title {
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 80px;
+	color: #ffffff;
+
+	@media screen and (max-width: 1023px) {
+		text-align: center;
+		font-size: 40px;
+	}
+}
+
+.subTitle {
+	margin: 15px 0;
+	max-width: 50%;
+	text-align: center;
+	font-weight: 400;
+
+	@media screen and (max-width: 1023px) {
+		max-width: 90%;
+	}
+}
+
+.buttonsDiv {
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	@media screen and (max-width: 1023px) {
+		flex-direction: column;
+		width: 90%;
+	}
+}
+
+.homepage {
+	font-family: "Secular One", sans-serif;
+	text-transform: uppercase;
+	font-size: 25px;
+	padding: 15px;
+	margin-top: 25px;
+	width: 40%;
+	transition: all 0.3s;
+	border: none;
+	border-radius: 50px;
+	background: #ff0000;
+	color: #ffffff;
+
+	&:hover {
+		background: #610000;
+	}
+
+	@media screen and (max-width: 1023px) {
+		width: 100%;
+		font-size: 18px;
+	}
+
+}

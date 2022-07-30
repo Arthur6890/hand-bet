@@ -1,0 +1,69 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 65vh;
+	background: #161616;
+
+	@media screen and (min-width: 1024px) and (max-width: 1439px) {
+		min-height: 70vh;
+	}
+}
+
+.title {
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 120px;
+	color: #ffffff;
+
+	@media screen and (max-width: 1023px) {
+		font-size: 60px;
+	}
+}
+
+.notFound,
+.subTitle {
+	font-family: 'Kanit', sans-serif;
+	font-size: 30px;
+	font-weight: 700;
+	color: #ffffff;
+
+	@media screen and (max-width: 1023px) {
+		font-size: 20px;
+	}
+}
+
+.subTitle {
+	margin: 15px 0;
+	max-width: 50%;
+	text-align: center;
+	font-weight: 400;
+
+	@media screen and (max-width: 1023px) {
+		max-width: 90%;
+	}
+}
+
+.homepage {
+	font-family: "Secular One", sans-serif;
+	text-transform: uppercase;
+	font-size: 25px;
+	padding: 15px;
+	margin-top: 25px;
+	width: 25%;
+	transition: all 0.3s;
+	border: none;
+	border-radius: 50px;
+	background: #ff0000;
+	color: #ffffff;
+
+	&:hover {
+		background: #610000;
+	}
+
+	@media screen and (max-width: 1023px) {
+		width: 90%;
+		font-size: 18px;
+	}
+
+}

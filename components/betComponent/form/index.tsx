@@ -5,7 +5,7 @@ import * as yup from "yup";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { setCookie } from "nookies";
+import { parseCookies, setCookie } from "nookies";
 import { TextInput } from "../../textInput";
 import { maskPhoneWithDDD } from "../../../utils/masks";
 import { isValidPhoneWithDDD } from "../../../utils/validationFunctions";
@@ -40,37 +40,48 @@ const schema = yup
 
 export function Form() {
   const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(schema) });
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    setCookie(null, "comprovanteNome", data.nome, {
-      path: "/",
-      maxAge: 86400,
-    });
-    setCookie(null, "comprovanteSobrenome", data.sobrenome, {
-      path: "/",
-      maxAge: 86400,
-    });
-    setCookie(null, "comprovanteValor", data.valorApostado.toString(), {
-      path: "/",
-      maxAge: 86400,
-    });
-    setCookie(null, "comprovanteEmail", data.email, {
-      path: "/",
-      maxAge: 86400,
-    });
-    setCookie(null, "comprovanteTelefone", data.whatsapp.toString(), {
-      path: "/",
-      maxAge: 86400,
-    });
-    setCookie(null, "comprovanteTime", data.timeApostado, {
-      path: "/",
-      maxAge: 86400,
-    });
-    router.push("/comprovante-de-aposta");
+		
+		if(parseCookies() == {}){
+			setCookie(null, "comprovanteNome", data.nome, {
+				path: "/",
+				maxAge: 86400 ,
+			});
+			setCookie(null, "comprovanteSobrenome", data.sobrenome, {
+				path: "/",
+				maxAge: 86400 ,
+			});
+			setCookie(null, "comprovanteValor", data.valorApostado.toString(), {
+				path: "/",
+				maxAge: 86400 ,
+			});
+			setCookie(null, "comprovanteEmail", data.email, {
+				path: "/",
+				maxAge: 86400 ,
+			});
+			setCookie(null, "comprovanteTelefone", data.whatsapp, {
+				path: "/",
+				maxAge: 86400 ,
+			});
+			setCookie(null, "comprovanteTime", data.timeApostado, {
+				path: "/",
+				maxAge: 86400 ,
+			});
+			
+			router.push("/comprovante-de-aposta");
+			
+		}
+
+		else{
+			router.push("/desculpe")
+		}
   };
   return (
     <div className={styles.main}>
