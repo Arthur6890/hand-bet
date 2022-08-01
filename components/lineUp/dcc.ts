@@ -18,13 +18,13 @@ export const DccLineUp = [
     nome: "Docin",
   },
   {
-    nome: "Erik",
+    nome: "Erick",
   },
   {
     nome: "Salles",
   },
   {
-    nome: "Joao Basquete",
+    nome: "Joao Pedro Basquete",
   },
   {
     nome: "Matheus",
