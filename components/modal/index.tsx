@@ -1,9 +1,17 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Modal from 'react-bootstrap/Modal';
 import styles from "./styles.module.scss"
 
 export function StudyOnlyModal() {
-    const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    setTimeout(
+      function() {
+        setShow(true)
+      }, 3000)
+  }, []);
+
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
 
