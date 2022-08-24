@@ -4,6 +4,7 @@ import { GritoCard } from "../components/gritoDeGuerraCard";
 import { HandBalaBanner } from "../components/handBalaBanner";
 import { HeaderHand } from "../components/headerHand";
 import { FooterHand } from "../components/footerHand";
+import { StudyOnlyModal } from "../components/modal";
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <StudyOnlyModal />
       <HeaderHand />
       <HandBalaBanner />
       <GritoCard />
